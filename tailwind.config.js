@@ -7,6 +7,9 @@ module.exports = {
         'regal-blue': '#5162B6',
         'orange': '#E75212'
       },
+      maxHeight: {
+        '530': '33.125rem'
+      }
     },
   },
   plugins: [],

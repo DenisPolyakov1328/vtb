@@ -6,22 +6,21 @@ import Participant from "./components/Participant/Participant";
 import Privelege from "./components/Privelege";
 
 function App() {
+
+  const component = [
+    {id: 1, name: Privelege},
+    {id: 2, name: Categories},
+    {id: 3, name: Participant},
+    {id: 4, name: Authorizacion},
+    {id: 5, name: Footer}
+  ]
+
   return (
     <div className="relative w-full min-w-full min-h-full overflow-hidden text-lg">
-      <main className="max-w-6xl m-auto">
-        <section>
-          <Privelege />
-        </section>
-        <section>
-          <Categories />
-        </section>
-        <section>
-          <Participant />
-        </section>
-        <section>
-          <Authorizacion />
-          <Footer />
-        </section>
+      <main>
+        {component.map((comp) => {
+          return (<section key={comp.id} className={`h-screen ${comp.id === 1 && 'bg-regal-blue  max-h-530'} `}><div className="max-w-6xl m-auto h-full">{comp.name()}</div></section>)
+        })}
       </main>
     </div>
   );
