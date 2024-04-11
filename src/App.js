@@ -19,7 +19,7 @@ function App() {
     <div className="relative w-full min-w-full min-h-full overflow-hidden text-lg">
       <main>
         {component.map((comp) => {
-          return (<section key={comp.id} className={`h-screen ${comp.id === 1 && 'bg-regal-blue  max-h-530'} `}><div className="max-w-6xl m-auto h-full">{comp.name()}</div></section>)
+          return (<section key={comp.id} className={`h-screen ${comp.id === 1 && 'bg-regal-blue  max-h-530 overflow-hidden'} flex items-center justify-center`}><div className="max-w-1440 px-40 h-full"><comp.name /></div></section>)
         })}
       </main>
     </div>
