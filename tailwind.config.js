@@ -8,10 +8,13 @@ module.exports = {
         'orange': '#E75212'
       },
       maxHeight: {
-        '530': '33.125rem'
+        '530': '530px'
       },
       maxWidth: {
-        '1440': '90rem'
+        '1440': '1440px'
+      },
+      fontSize: {
+        '40': ['40px', '45px'],
       }
     },
   },
