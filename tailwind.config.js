@@ -9,7 +9,8 @@ module.exports = {
         'gray': '#F5F5F5',
         'title-blue': '#7888B1',
         'descr-blue': '#606981',
-        'gray-blue': '#6F7ECB'
+        'gray-blue': '#6F7ECB',
+        'bdr-gray': '#D4D7DF'
       },
       maxHeight: {
         '530': '530px'
