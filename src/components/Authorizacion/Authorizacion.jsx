@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import CustomCheckbox from './CustomCheckbox';
 
 // Пример объекта с именами пользователей и паролями
 const users = {
@@ -16,6 +17,11 @@ const LoginForm = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -52,8 +58,8 @@ const LoginForm = () => {
         <input
           id="username"
           type="text"
-          placeholder="Имя пользователя"
-          className={`mt-1 block w-full px-3 py-2 border ${errors.username ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+          placeholder="Логин"
+          className={`mt-1 placeholder:text-descr-blue text-descr-blue block w-full px-3 py-2 border ${errors.username ? 'border-red-500' : 'border-bdr-gray'} rounded-md shadow-sm focus:outline-none sm:text-sm`}
           {...register('username', { 
             required: 'Имя пользователя обязательно',
             minLength: {
@@ -70,7 +76,7 @@ const LoginForm = () => {
           id="password"
           type={showPassword ? 'text' : 'password'}
           placeholder="Пароль"
-          className={`mt-1 block w-full px-3 py-2 border ${errors.password ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+          className={`mt-1 placeholder:text-descr-blue text-descr-blue block w-full px-3 py-2 border ${errors.password ? 'border-red-500' : 'border-bdr-gray'} rounded-md shadow-sm focus:outline-none sm:text-sm`}
           {...register('password', {
             required: 'Пароль обязателен',
             minLength: {
@@ -91,43 +97,49 @@ const LoginForm = () => {
           className="absolute inset-y-0 right-0 px-3 py-2 text-gray-600 focus:outline-none"
           onClick={togglePasswordVisibility}
         >
-          <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+          <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} color='gray' />
         </button>
         {errors.password && <p className="mt-2 text-sm text-red-600">{errors.password.message}</p>}
       </div>
 
       <div className="mb-4">
-        <label className="flex items-center">
+        <label className="flex items-baseline text-descr-blue">
           <input
             type="checkbox"
             className="mr-2"
             {...register('agreeTerms', { required: 'Принятие пользовательского соглашения обязательно' })}
           />
-          <a href="/terms" className="text-indigo-600">Принимаю пользовательское соглашение</a>
+          <p>
+            Принимаю <a href="#/" className="text-indigo-600 underline">пользовательское соглашение</a>
+          </p>
         </label>
         {errors.agreeTerms && <p className="mt-2 text-sm text-red-600">{errors.agreeTerms.message}</p>}
       </div>
 
       <div className="mb-4">
-        <label className="flex items-center">
+        <label className="flex items-baseline text-descr-blue">
           <input
             type="checkbox"
             className="mr-2"
             {...register('receiveUpdates', { required: 'Соглашение на обработку и передачу персональных данных обязательно' })}
           />
-          <a href="/data-processing" className="text-indigo-600">Соглашаюсь на обработку и передачу персональных данных</a>
+          <p>
+            Соглашаюсь на <a href="#/" className="text-indigo-600 underline">обработку и передачу персональных данных</a>
+          </p>
         </label>
         {errors.receiveUpdates && <p className="mt-2 text-sm text-red-600">{errors.receiveUpdates.message}</p>}
       </div>
 
       <div className="mb-4">
-        <label className="flex items-center">
+        <label className="flex items-baseline text-descr-blue">
           <input
             type="checkbox"
             className="mr-2"
             {...register('ageConfirmation', { required: 'Принятие политики обработки персональных данных клиентов обязательно' })}
           />
-          <a href="/privacy-policy" className="text-indigo-600">Принимаю политику обработки персональных данных клиентов</a>
+          <p>
+            Принимаю <a href="#/" className="text-indigo-600 underline">политику обработки персональных данных</a> клиентов
+          </p>
         </label>
         {errors.ageConfirmation && <p className="mt-2 text-sm text-red-600">{errors.ageConfirmation.message}</p>}
       </div>
@@ -139,6 +151,15 @@ const LoginForm = () => {
       >
         Войти
       </button>
+
+      <div className="p-4">
+        <CustomCheckbox
+          label="Выбери меня"
+          name="terms"
+          checked={isChecked}
+          onChange={handleCheckboxChange}
+        />
+    </div>
     </form>
   );
 };

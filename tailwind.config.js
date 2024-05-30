@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         'regal-blue': '#5162B6',
         'orange': '#E75212',
+        'log-orange': '#F3723A',
         'gray': '#F5F5F5',
         'title-blue': '#7888B1',
         'descr-blue': '#606981',
