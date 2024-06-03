@@ -1,0 +1,16 @@
+.element:checked::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3.5px;
+    left: 6.5px;
+    width: 7.33px;
+    height: 10.67px;
+    border-width: 2px;
+    border-top: none;
+    border-left: none;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    transform-origin: 50% 50%;
+    transform: rotate(35deg);
+  }

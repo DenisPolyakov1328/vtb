@@ -11,7 +11,9 @@ module.exports = {
         'title-blue': '#7888B1',
         'descr-blue': '#606981',
         'gray-blue': '#6F7ECB',
-        'bdr-gray': '#D4D7DF'
+        'bdr-gray': '#D4D7DF',
+        'btn-gray': '#EEEEEE',
+        'red-error': '#F36E6E'
       },
       maxHeight: {
         '530': '530px'
