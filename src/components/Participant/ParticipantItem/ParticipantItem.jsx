@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ParticipantList = (props) => {
+const ParticipantItem = (props) => {
   return (
     <div className='flex items-center bg-white p-[38px] rounded-lg'>
         <div className='py-[17px] px-[24px] mr-[24px] bg-gray rounded-full text-[25px] text-regal-blue flex items-center justify-center'>{props.id.toString()}</div>
@@ -9,4 +9,4 @@ const ParticipantList = (props) => {
   )
 }
 
-export default ParticipantList
+export default ParticipantItem

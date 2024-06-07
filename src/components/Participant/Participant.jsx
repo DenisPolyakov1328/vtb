@@ -1,5 +1,5 @@
 import React from 'react';
-import ParticipantList from '../Participant/ParticipantList/ParticipantList';
+import ParticipantItem from './ParticipantItem/ParticipantItem';
 
 const participantData = [
   {id: 1, descr: 'Логин и пароль для авторизации в личном кабинете программы вы можете найти в смс или Email сообщении от Банка с темой «…»'},
@@ -11,7 +11,7 @@ const participantData = [
 const Participant = () => {
 
   const participantElements = participantData.map((el) => (
-    <ParticipantList id={el.id} descr={el.descr} key={el.id}/>
+    <ParticipantItem id={el.id} descr={el.descr} key={el.id}/>
   ))
 
   return (
