@@ -23,7 +23,7 @@ const Categories = () => {
   return (
     <div className='h-full w-full sm:py-[75px] md:py-[130px]'>
       <h2 className='mb-[45px] text-title-blue text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl'>Получить доступ к скидкам в разных категориях</h2>
-      <div  className='flex flex-wrap gap-5'>{categoryElements}</div>
+      <div  className='flex flex-wrap justify-center gap-5'>{categoryElements}</div>
     </div>
   )
 }
